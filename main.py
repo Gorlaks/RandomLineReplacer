@@ -1,5 +1,7 @@
 from random import randrange
 
+fileName = "data.csv"
+
 def get_random_positions(lines):
   from_position = randrange(1, len(lines))
   to_position = randrange(1, len(lines))
@@ -10,7 +12,7 @@ def get_random_positions(lines):
   return from_position, to_position
 
 
-with open("data.csv", "r") as file:
+with open(fileName, "r") as file:
   lines = file.readlines()
   iterations_count = len(lines)
 
@@ -23,7 +25,7 @@ with open("data.csv", "r") as file:
   file.close()
 
 
-with open("data.csv", "w") as file:
+with open(fileName, "w") as file:
   for line in lines:
     file.write(f"{line}")
 
